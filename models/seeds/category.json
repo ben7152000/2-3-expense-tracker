@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+    "name": "home",
+    "ch_name": "住宿",
+    "icon": "https://fontawesome.com/icons/home?style=solid"
+    }, 
+    {
+    "name": "traffic",
+    "ch_name": "交通",
+    "icon": "https://fontawesome.com/icons/shuttle-van?style=solid"
+    }, 
+    {
+    "name": "entertainment",
+    "ch_name": "娛樂",
+    "icon": "https://fontawesome.com/icons/grin-beam?style=solid"
+    }, 
+    {
+    "name": "food",
+    "ch_name": "飲食",
+    "icon": "https://fontawesome.com/icons/utensils?style=solid"
+    },
+    {
+    "name": "other",
+    "ch_name": "其他",
+    "icon": "https://fontawesome.com/icons/pen?style=solid"
+    }
+  ]
+}
