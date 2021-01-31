@@ -4,5 +4,4 @@ const category = require('./category.json')
 
 db.once('open', () => {
   category.results.forEach(classification => Category.create(classification))
-  console.log('The categorySeeder is done')
 })

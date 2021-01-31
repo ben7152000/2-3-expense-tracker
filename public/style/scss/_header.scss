@@ -11,16 +11,16 @@ header {
     color: #eee;
     text-decoration: none;
     font-weight: 900;
-    font-size: 2.2rem;
+    font-size: 50px;
     letter-spacing: 1px;
     font-family: 'Poppins';
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 576px) {
   header {
     a {
-      font-size: 2.5rem;
+      font-size: 30px;
     }
   }
 }

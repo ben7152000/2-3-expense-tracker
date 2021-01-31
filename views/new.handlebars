@@ -1,14 +1,31 @@
-<form action="/list/new" method="POST">
-  <input type="text" name="name">
-  <input type="date" name="date">
-  <select name="category">
-    <option value="food">飲食</option>
-    <option value="live">住宿</option>
-    <option value="traffic">交通</option>
-    <option value="entertainment">娛樂</option>
-    <option value="others">其他</option>
-  </select>
-  <input type="number" name="amount">
-  <input type="submit" value="確認">
-</form>
-<a href="/">返回</a>
+<section>
+  <div class="container">
+    <h2>請輸入支出明細</h2>
+    <form action="/list/new" method="POST">
+      <div class="group">
+        <label>名稱 : </label>
+        <input type="text" name="name" placeholder="breakfast..." required>
+      </div>
+      <div class="group">
+        <label>日期 : </label>
+        <input type="date" name="date" required>
+      </div>
+      <div class="group">
+        <label>種類 : </label>
+        <select name="category" required>
+          <option value="home">住宿</option>
+          <option value="traffic">交通</option>
+          <option value="entertainment">娛樂</option>
+          <option value="food">飲食</option>
+          <option value="other">其他</option>
+        </select>
+      </div>
+      <div class="group">
+        <label>金額 : </label>
+        <input type="number" name="amount" placeholder="300" required>
+      </div>
+      <input type="submit" value="新增支出" class="btn">
+    </form>
+    <a href="/">退回</a>
+  </div>
+</section>

@@ -4,5 +4,4 @@ const record = require('./record.json')
 
 db.once('open', () => {
   record.results.forEach(list => Record.create(list))
-  console.log('The recordSeeder is done')
 })
