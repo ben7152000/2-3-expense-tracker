@@ -1,6 +1,8 @@
 <section class="list">
   <div class="total">NT : 3000</div>
-  <input type="button" value="+" class="new">
+  <form action="/list/new" method="get">
+    <input type="submit" value="+" class="new">
+  </form>
   <select name="filter">
     <option value="all">全部</option>
     <option value="home">住宿</option>
@@ -15,10 +17,10 @@
       <div class="name">房租</div>
       <div class="date">2021-01-31</div>
       <div class="amount">$8000</div>
-      <div class="btn">
+      <form action="/list/edit" class="btn">
         <button><i class="fas fa-edit"></i></button>
-        <button><i class="fas fa-trash-alt"></i></button>
-      </div>
+        <button formaction="/list/delete" formmethod="POST" id="delete"><i class="fas fa-trash-alt"></i></button>
+      </form>
     </div>
   </div>
 </section>

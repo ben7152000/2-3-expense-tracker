@@ -115,6 +115,11 @@
       }
 
       .btn {
+        width: 80px;
+        max-width: 100%;
+        background-color: #fff;
+        padding: 0;
+
         button {
           width: 30px;
           height: 30px;
@@ -176,9 +181,13 @@
         }
 
         .btn {
+          display: flex;
+          justify-content: center;
+
           button {
             width: 60px;
             height: 60px;
+            margin: 0 10px;
 
             i {
               font-size: 30px;

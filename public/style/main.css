@@ -187,6 +187,13 @@ header a {
   color: #333;
 }
 
+.list .container .group .btn {
+  width: 80px;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 0;
+}
+
 .list .container .group .btn button {
   width: 30px;
   height: 30px;
@@ -241,9 +248,18 @@ header a {
     font-size: 25px;
     margin-bottom: 20px;
   }
+  .list .container .group .btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .list .container .group .btn button {
     width: 60px;
     height: 60px;
+    margin: 0 10px;
   }
   .list .container .group .btn button i {
     font-size: 30px;
