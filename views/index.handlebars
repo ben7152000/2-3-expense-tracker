@@ -1,6 +1,12 @@
 <section class="list">
+
+  <!--  Amount Total  -->
   <div class="total">NT : 3000</div>
-    <a href="/list/new" class="new">+</a>
+
+  <!--  Add New List  -->
+  <a href="/list/new" class="new">+</a>
+
+  <!--  Category Filter  -->
   <select name="filter">
     <option value="all">全部</option>
     <option value="home">住宿</option>
@@ -9,18 +15,33 @@
     <option value="food">飲食</option>
     <option value="other">其他</option>
   </select>
+
   <div class="container">
+
+    <!--  Render Record List  -->
     {{#each record}}
     <div class="group">
-      <div class="category"><i class="{{  category  }}"></i></div>
-      <div class="name">{{  name  }}</div>
-      <div class="date">{{  date  }}</div>
-      <div class="amount">${{  amount  }}</div>
-      <form action="/list/edit" class="btn">
+
+      <!--  Category  -->
+      <div class="category"><i class="{{  this.categoryIcon  }}"></i></div>
+
+      <!--  Name  -->
+      <div class="name">{{  this.name  }}</div>
+
+      <!--  Date  -->
+      <div class="date">{{  this.date  }}</div>
+
+      <!--  Amount  -->
+      <div class="amount">${{  this.amount  }}</div>
+
+      <!--  Edit and Delete Button  -->
+      <form action="/list/{{  this._id  }}/edit" class="btn">
         <button><i class="fas fa-edit"></i></button>
-        <button formaction="/list/delete" formmethod="POST" id="delete"><i class="fas fa-trash-alt"></i></button>
+        <button formaction="/list/{{  this._id  }}/delete" formmethod="POST" id="delete"><i class="fas fa-trash-alt"></i></button>
       </form>
+      
     </div>
     {{/each}}
+
   </div>
 </section>

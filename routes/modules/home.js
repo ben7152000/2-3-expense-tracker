@@ -1,9 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const record = require('../../models/seeds/record.json')
+const Record = require('../../models/record')
 
 router.get('/', (req, res) => {
-  res.render('index', { record: record.results })
+  Record.find()
+    .lean()
+    .then(record => res.render('index', { record }))
+    .catch(error => console.error(error))
 })
 
 module.exports = router
