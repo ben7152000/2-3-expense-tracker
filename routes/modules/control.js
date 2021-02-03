@@ -24,9 +24,7 @@ router.get('/:id/edit', (req, res) => {
   const id = req.params.id
   Record.findById(id)
     .lean()
-    .then((record) => {
-      res.render('edit', { record })
-    })
+    .then((record) => res.render('edit', { record }))
     .catch(error => console.log(error))
 })
 

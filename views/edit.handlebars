@@ -21,11 +21,11 @@
       <div class="group">
         <label>種類 : </label>
         <select name="Category" required>
-          <option value="home/fas fa-home" {{#if selected }} selected {{/if}}>住宿</option>
-          <option value="traffic/fas fa-shuttle-van" {{#if selected}} selected {{/if}}>交通</option>
-          <option value="entertainment/fas fa-grin-beam" {{#if selected}} selected {{/if}}>娛樂</option>
-          <option value="food/fas fa-utensils" {{#if selected}} selected {{/if}}>飲食</option>
-          <option value="other/fas fa-pen" {{#if selected}} selected {{/if}}>其他</option>
+          <option value="home/fas fa-home" {{#if (same record.category 'home')}} selected {{/if}}>住宿</option>
+          <option value="traffic/fas fa-shuttle-van" {{#if (same record.category 'traffic')}} selected {{/if}}>交通</option>
+          <option value="entertainment/fas fa-grin-beam" {{#if (same record.category 'entertainment')}} selected {{/if}}>娛樂</option>
+          <option value="food/fas fa-utensils" {{#if (same record.category 'food')}} selected {{/if}}>飲食</option>
+          <option value="other/fas fa-pen" {{#if (same record.category 'other')}} selected {{/if}}>其他</option>
         </select>
       </div>
 
