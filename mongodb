@@ -1,4 +1,4 @@
 帳號：root
 密碼：root
-mongodb+srv://root:<password>@cluster0.lqd5l.mongodb.net/<dbname>?retryWrites=true&w=majority
-https://polar-wildwood-27746.herokuapp.com/ | https://git.heroku.com/polar-wildwood-27746.git
+mongodb+srv://root:root@cluster0.lqd5l.mongodb.net/expense-tracker?retryWrites=true&w=majority
+https://serene-plateau-18889.herokuapp.com/ | https://git.heroku.com/serene-plateau-18889.git
