@@ -5,7 +5,13 @@ const Record = require('../../models/record')
 router.get('/', (req, res) => {
   Record.find()
     .lean()
-    .then(record => res.render('index', { record }))
+    .then(record => {
+      let totalAmount = 0
+      record.forEach(list => {
+        totalAmount += list.amount
+      })
+      res.render('index', { totalAmount, record })
+    })
     .catch(error => console.error(error))
 })
 
