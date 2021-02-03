@@ -54,4 +54,20 @@ router.post('/:id/delete', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// filter
+router.get('/filter', (req, res) => {
+  const filter = req.query.filter
+  if (filter === 'all') res.redirect('/')
+  Record.find({ category: filter })
+    .lean()
+    .then(record => {
+      let totalAmount = 0
+      record.forEach(list => {
+        totalAmount += list.amount
+      })
+      res.render('index', { totalAmount, record, filter })
+    })
+    .catch(error => console.log(error))
+})
+
 module.exports = router

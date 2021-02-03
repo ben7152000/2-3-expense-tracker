@@ -7,14 +7,17 @@
   <a href="/list/new" class="new">+</a>
 
   <!--  Category Filter  -->
-  <select name="filter">
-    <option value="all">全部</option>
-    <option value="home">住宿</option>
-    <option value="traffic">交通</option>
-    <option value="entertainment">娛樂</option>
-    <option value="food">飲食</option>
-    <option value="other">其他</option>
-  </select>
+  <form action="/list/filter" method="GET">
+    <select name="filter">
+      <option value="all">全部</option>
+      <option value="home" {{#if (same filter 'home' )}} selected {{/if}}>住宿</option>
+      <option value="traffic" {{#if (same filter 'traffic' )}} selected {{/if}}>交通</option>
+      <option value="entertainment" {{#if (same filter 'entertainment' )}} selected {{/if}}>娛樂</option>
+      <option value="food" {{#if (same filter 'food' )}} selected {{/if}}>飲食</option>
+      <option value="other" {{#if (same filter 'other' )}} selected {{/if}}>其他</option>
+    </select>
+    <input type="submit" value="送出">
+  </form>
 
   <div class="container">
 

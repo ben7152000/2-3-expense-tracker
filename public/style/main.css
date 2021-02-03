@@ -66,8 +66,19 @@ header a {
   text-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
 }
 
-.list select {
-  max-width: 100%;
+.list form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list form select {
   height: 40px;
   border: none;
   border-radius: 10px;
@@ -85,10 +96,40 @@ header a {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100px;
-  margin: 10px auto;
+  margin-right: 10px;
 }
 
-.list select:focus {
+.list form select:focus {
+  border: none;
+  outline: none;
+}
+
+.list form input {
+  width: 60px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #313131;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: color .5s ease-in-out;
+  transition: color .5s ease-in-out;
+}
+
+.list form input:hover {
+  color: #ffce00;
+}
+
+.list form input:focus {
   border: none;
   outline: none;
 }
