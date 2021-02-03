@@ -3,24 +3,24 @@
 
     <!--  Title  -->
     <h2>請輸入支出明細</h2>
-    <form action="/list" method="POST">
+    <form action="/list/new" method="POST">
       
       <!--  Name  -->
       <div class="group">
         <label>名稱 : </label>
-        <input type="text" name="name" placeholder="breakfast..." required>
+        <input type="text" name="Name" placeholder="breakfast..." required>
       </div>
 
       <!--  Date  -->
       <div class="group">
         <label>日期 : </label>
-        <input type="date" name="date" required>
+        <input type="date" name="Date" required>
       </div>
 
       <!--  Category  -->
       <div class="group">
         <label>種類 : </label>
-        <select name="category" required>
+        <select name="Category" required>
           <option value="home/fas fa-home">住宿</option>
           <option value="traffic/fas fa-shuttle-van">交通</option>
           <option value="entertainment/fas fa-grin-beam">娛樂</option>
@@ -32,7 +32,7 @@
       <!--  Amount  -->
       <div class="group">
         <label>金額 : </label>
-        <input type="number" name="amount" placeholder="300" required>
+        <input type="number" name="Amount" placeholder="300" required>
       </div>
 
       <!--  Submit  -->

@@ -5,18 +5,18 @@ const Record = require('../../models/record')
 // New
 router.get('/new', (req, res) => res.render('new'))
 
-router.post('/', (req, res) => {
-  const record = req.body
-  console.log(record.category)
-  // Record.create({
-  //   name: record.name,
-  //   date: record.date,
-  //   category: record.category,
-  //   categoryIcon: record.category,
-  //   amount: record.amount
-  // })
-  //   .then(() => res.redirect('/'))
-  //   .catch(error => console.log(error))
+router.post('/new', (req, res) => {
+  const { Name, Date, Category, Amount } = req.body
+  const [category, categoryIcon] = Category.split('/')
+  Record.create({
+    name: Name,
+    date: Date,
+    category,
+    categoryIcon,
+    amount: Amount
+  })
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
 })
 
 // Edit

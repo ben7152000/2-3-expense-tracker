@@ -1,3 +1,5 @@
-document.querySelector('#delete').addEventListener('click', () => {
-  alert('確定要刪除嗎?')
+document.querySelectorAll('.btn #delete').forEach(element => {
+  element.addEventListener('click', () => {
+    alert('確定要刪除嗎?')
+  })
 })
