@@ -56,7 +56,7 @@ header a {
   font-size: 40px;
   font-weight: 700;
   color: #fff;
-  background-color: #FFCE00;
+  background-color: #ffce00;
   width: 300px;
   padding: 10px 15px;
   margin: 50px auto;
@@ -108,15 +108,15 @@ header a {
   color: #fff;
   font-weight: 700;
   cursor: pointer;
-  -webkit-transition: color .5s ease-in-out, -webkit-transform .5s ease-in-out;
-  transition: color .5s ease-in-out, -webkit-transform .5s ease-in-out;
-  transition: color .5s ease-in-out, transform .5s ease-in-out;
-  transition: color .5s ease-in-out, transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+  -webkit-transition: color 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
   text-decoration: none;
 }
 
 .list .new:hover {
-  color: #FFCE00;
+  color: #ffce00;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -182,7 +182,8 @@ header a {
   width: 100px;
 }
 
-.list .container .group .date, .list .container .group .amount {
+.list .container .group .date,
+.list .container .group .amount {
   font-size: 20px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -195,33 +196,74 @@ header a {
   max-width: 100%;
   background-color: #fff;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.list .container .group .btn button {
+.list .container .group .btn a {
   width: 30px;
   height: 30px;
+  margin: 0 5px 0 0;
+  padding: 0;
+  line-height: 30px;
   text-align: center;
-  border: none;
+  text-decoration: none;
   background-color: #fff;
-  -webkit-transition: color .5s ease-in-out;
-  transition: color .5s ease-in-out;
-  cursor: pointer;
+  color: #333;
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
 
-.list .container .group .btn button:first-child:hover {
-  color: #0585ee;
-}
-
-.list .container .group .btn button:last-child:hover {
-  color: #e4400f;
-}
-
-.list .container .group .btn button i {
+.list .container .group .btn a i {
   font-size: 20px;
   line-height: 30px;
 }
 
-.list .container .group .btn button:focus {
+.list .container .group .btn a:hover {
+  color: #0585ee;
+}
+
+.list .container .group .btn a:focus {
+  border: none;
+  outline: none;
+}
+
+.list .container .group .btn .delete {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+}
+
+.list .container .group .btn .delete button {
+  width: 100%;
+  text-align: center;
+  border: none;
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+  cursor: pointer;
+  background-color: #fff;
+  color: #333;
+}
+
+.list .container .group .btn .delete button:hover {
+  color: #e4400f;
+}
+
+.list .container .group .btn .delete button i {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.list .container .group .btn .delete button:focus {
   border: none;
   outline: none;
 }
@@ -247,26 +289,24 @@ header a {
     font-size: 30px;
     line-height: 60px;
   }
-  .list .container .group .name, .list .container .group .date, .list .container .group .amount {
+  .list .container .group .name,
+  .list .container .group .date,
+  .list .container .group .amount {
     font-size: 25px;
     margin-bottom: 20px;
     width: 200px;
     text-align: center;
   }
   .list .container .group .btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    width: 100px;
   }
-  .list .container .group .btn button {
-    width: 60px;
-    height: 60px;
-    margin: 0 10px;
+  .list .container .group .btn a {
+    margin: 0 15px 0 0;
   }
-  .list .container .group .btn button i {
+  .list .container .group .btn a i {
+    font-size: 30px;
+  }
+  .list .container .group .btn .delete button i {
     font-size: 30px;
   }
 }

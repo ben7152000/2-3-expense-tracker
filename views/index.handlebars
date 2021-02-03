@@ -35,10 +35,12 @@
       <div class="amount">${{  this.amount  }}</div>
 
       <!--  Edit and Delete Button  -->
-      <form action="/list/{{  this._id  }}/edit" class="btn">
-        <button><i class="fas fa-edit"></i></button>
-        <button formaction="/list/{{  this._id  }}/delete" formmethod="POST" id="delete"><i class="fas fa-trash-alt"></i></button>
-      </form>
+      <div class="btn">
+        <a href="/list/{{  this._id  }}/edit"><i class="fas fa-edit"></i></a>
+        <form action="/list/{{  this._id  }}/delete" method="POST" class="delete">
+          <button id="delete"><i class="fas fa-trash-alt"></i></button>
+        </form>
+      </div>
       
     </div>
     {{/each}}

@@ -3,36 +3,36 @@
 
     <!--  Title  -->
     <h2>請編輯支出明細</h2>
-    <form action="/list/new" method="POST">
+    <form action="/list/{{  record._id  }}/edit" method="POST">
 
       <!--  Name  -->
       <div class="group">
         <label>名稱 : </label>
-        <input type="text" name="name" placeholder="breakfast..." value="{{  list.name  }}" required>
+        <input type="text" name="Name" placeholder="breakfast..." value="{{  record.name  }}" required>
       </div>
 
       <!--  Date  -->
       <div class="group">
         <label>日期 : </label>
-        <input type="date" name="date" value="{{  list.date  }}" required>
+        <input type="date" name="Date" value="{{  record.date  }}" required>
       </div>
 
       <!--  Category  -->
       <div class="group">
         <label>種類 : </label>
-        <select name="category" value="{{  list.category  }}" required>
-          <option value="home">住宿</option>
-          <option value="traffic">交通</option>
-          <option value="entertainment">娛樂</option>
-          <option value="food">飲食</option>
-          <option value="other">其他</option>
+        <select name="Category" required>
+          <option value="home/fas fa-home" {{#if (record.categoryIcon 'fas fa-home')}} selected {{/if}}>住宿</option>
+          <option value="traffic/fas fa-shuttle-van" {{#if (record.categoryIcon 'fas fa-shuttle-van')}} selected {{/if}}>交通</option>
+          <option value="entertainment/fas fa-grin-beam" {{#if (record.categoryIcon 'fas fa-grin-beam')}} selected {{/if}}>娛樂</option>
+          <option value="food/fas fa-utensils" {{#if (record.categoryIcon 'fas fa-utensils')}} selected {{/if}}>飲食</option>
+          <option value="other/fas fa-pen" {{#if (record.categoryIcon 'fas fa-pen')}} selected {{/if}}>其他</option>
         </select>
       </div>
 
       <!--  Amount  -->
       <div class="group">
         <label>金額 : </label>
-        <input type="number" name="amount" placeholder="300" value="{{  list.amount  }}" required>
+        <input type="number" name="Amount" placeholder="300" value="{{  record.amount  }}" required>
       </div>
 
       <!--  Submit  -->

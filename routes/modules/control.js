@@ -22,9 +22,9 @@ router.post('/new', (req, res) => {
 // Edit
 router.get('/:id/edit', (req, res) => {
   const id = req.params.id
-  return Record.findById(id)
+  Record.findById(id)
     .lean()
-    .then((list) => res.render('edit', { list }))
+    .then((record) => res.render('edit', { record }))
     .catch(error => console.log(error))
 })
 
