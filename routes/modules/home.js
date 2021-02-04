@@ -4,6 +4,7 @@ const Record = require('../../models/record')
 
 // home
 router.get('/', (req, res) => {
+  if (Record === null) return res.render('index')
   Record
     .find()
     .lean()
