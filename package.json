@@ -10,7 +10,9 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "seed": "node models/seeds/categorySeeder.js & node models/seeds/recordSeeder.js "
+    "seed": "node models/seeds/categorySeeder.js & node models/seeds/recordSeeder.js",
+    "record": "node models/seeds/recordSeeder.js",
+    "category": "node models/seeds/categorySeeder.js"
   },
   "author": "Ben",
   "license": "MIT",
