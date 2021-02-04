@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Record = require('../../models/record')
+const Record = require('../../models/record.js')
 
 // home
 router.get('/', (req, res) => {
@@ -13,7 +13,6 @@ router.get('/', (req, res) => {
       })
       res.render('index', { totalAmount, record })
     })
-    .catch(error => console.error(error))
 })
 
 module.exports = router
