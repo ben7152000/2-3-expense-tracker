@@ -1,5 +1,14 @@
 const db = require('../../config/mongoose')
 const Category = require('../category')
-const category = require('../category.json')
+const categoryList = require('../category.json')
 
-db.once('open', () => category.results.forEach(classification => Category.create(classification)))
+db.once('open', () => {
+  const categories = []
+  categoryList.results.forEach(category => {
+    categories.push(category)
+  })
+  Category.create(categories)
+    .then(() => {
+      return db.close()
+    })
+})
