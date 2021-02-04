@@ -8,7 +8,7 @@ require('./config/mongoose')
 
 // Normal Setting
 const app = express()
-const PORT = process.env.PORT || 3000
+const port = process.env.PORT
 
 // Body-Parser
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -22,4 +22,4 @@ app.use(express.static('public'))
 app.use(routers)
 
 // Listen
-app.listen(PORT, () => console.log(`The server is running on localhost:${PORT}`))
+app.listen(port, () => console.log(`The server is running on localhost:${port}`))
