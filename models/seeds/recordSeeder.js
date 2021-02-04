@@ -9,8 +9,13 @@ const p = new Promise((resolve, reject) => {
   })
 })
 p.then(() => {
-  records.forEach(list => new Record(list))
+  const record = []
+  for (let i = 0; i < records.length; i++) {
+    const newRecord = new Record(records[i])
+    record.push(newRecord)
+  }
   console.log('record is done')
+  return record
 })
   .then(() => db.close())
   .catch(err => console.log(err))
