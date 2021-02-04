@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const recordmodel = require('../../models/record')
+const Record = require('../../models/record')
 
 // New
 router.get('/new', (req, res) => res.render('new'))
@@ -8,7 +8,7 @@ router.get('/new', (req, res) => res.render('new'))
 router.post('/new', (req, res) => {
   const { Name, Date, Category, Amount } = req.body
   const [category, categoryIcon] = Category.split('/')
-  recordmodel.create({
+  Record.create({
     name: Name,
     date: Date,
     category,
@@ -22,7 +22,7 @@ router.post('/new', (req, res) => {
 // Edit
 router.get('/:id/edit', (req, res) => {
   const id = req.params.id
-  recordmodel.findById(id)
+  Record.findById(id)
     .lean()
     .then((record) => res.render('edit', { record }))
     .catch(error => console.log(error))
@@ -32,7 +32,7 @@ router.post('/:id/edit', (req, res) => {
   const id = req.params.id
   const { Name, Date, Category, Amount } = req.body
   const [category, categoryIcon] = Category.split('/')
-  recordmodel.findById(id)
+  Record.findById(id)
     .then(record => {
       record.name = Name
       record.date = Date
@@ -48,7 +48,7 @@ router.post('/:id/edit', (req, res) => {
 // delete
 router.post('/:id/delete', (req, res) => {
   const id = req.params.id
-  return recordmodel.findById(id)
+  return Record.findById(id)
     .then(list => list.remove())
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
@@ -58,7 +58,7 @@ router.post('/:id/delete', (req, res) => {
 router.get('/filter', (req, res) => {
   const filter = req.query.filter
   if (filter === 'all') res.redirect('/')
-  recordmodel.find({ category: filter })
+  Record.find({ category: filter })
     .lean()
     .then(record => {
       let totalAmount = 0

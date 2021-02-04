@@ -11,7 +11,7 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 // Body-Parser
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // Express-Handlebars
 app.set('view engine', 'handlebars')
