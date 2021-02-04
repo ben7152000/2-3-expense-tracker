@@ -8,7 +8,7 @@ require('./config/mongoose')
 
 // Normal Setting
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 // Body-Parser
 app.use(bodyParser.urlencoded({ extended: true }))
