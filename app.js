@@ -3,12 +3,12 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const Router = require('./routes')
 
+// Mongoose
+require('./config/mongoose')
+
 // Normal Setting
 const app = express()
 const PORT = process.env.PORT || 3000
-
-// Mongoose
-require('./config/mongoose')
 
 // Body-Parser
 app.use(bodyParser.urlencoded({ extended: false }))
