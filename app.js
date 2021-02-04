@@ -22,4 +22,4 @@ app.use(express.static('public'))
 app.use(routers)
 
 // Listen
-app.listen(PORT, () => console.log(`The server is running on localhost:${PORT}`))
+app.listen(PORT)
