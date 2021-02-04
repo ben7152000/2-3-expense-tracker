@@ -5,6 +5,7 @@ const Router = require('./routes/index')
 
 // Normal Setting
 const app = express()
+const PORT = process.env.PORT
 
 // Mongoose
 require('./config/mongoose')
@@ -21,6 +22,4 @@ app.use(express.static('public'))
 app.use(Router)
 
 // Listen
-app.listen(process.env.PORT || 3000, function () {
-  console.log('Express server listening on port %d in %s mode', this.address().port, app.settings.env)
-})
+app.listen(PORT, () => console.log(`The server is running on localhost:${PORT}`))
