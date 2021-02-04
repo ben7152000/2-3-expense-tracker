@@ -8,4 +8,6 @@ const recordSchema = new Schema({
   amount: { type: Number, required: true }
 })
 
-module.exports = mongoose.model('Record', recordSchema)
+const Record = mongoose.model('Record', recordSchema)
+
+module.exports = Record
