@@ -1,4 +1,4 @@
 帳號：root
-密碼：TDcszLSKVUozU2xp
-mongodb+srv://root:TDcszLSKVUozU2xp@cluster0.lqd5l.mongodb.net/expense-tracker?retryWrites=true&w=majority
-https://afternoon-bayou-35171.herokuapp.com/ | https://git.heroku.com/afternoon-bayou-35171.git
+密碼：root
+mongodb+srv://root:root@cluster0.lqd5l.mongodb.net/expense-tracker?retryWrites=true&w=majority
+https://intense-island-20855.herokuapp.com/ | https://git.heroku.com/intense-island-20855.git
