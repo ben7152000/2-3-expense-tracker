@@ -4,7 +4,7 @@ const router = express.Router()
 
 // home
 router.get('/', (req, res) => {
-  res.send('ok')
+  res.render('index')
   // Record.find()
   //   .lean()
   //   .then(record => {
