@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../../models/record')
+require('./config/mongoose')
 
 // New
 router.get('/new', (req, res) => res.render('new'))

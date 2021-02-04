@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+require('./config/mongoose')
 
 const home = require('./modules/home')
 const control = require('./modules/control')
