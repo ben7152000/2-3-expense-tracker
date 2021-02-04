@@ -1,7 +1,7 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
-const routers = require('./routes')
+const routers = require('./routes/index.js')
 
 // Mongoose
 require('./config/mongoose')

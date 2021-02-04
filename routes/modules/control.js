@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Record = require('./../../models/record')
+const Record = require('./../../models/record.js')
 
 // New
 router.get('/new', (req, res) => res.render('new'))
