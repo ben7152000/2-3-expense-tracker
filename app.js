@@ -1,7 +1,7 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
-const Router = require('./routes/index')
+// const Router = require('./routes/index')
 
 // Normal Setting
 const app = express()
@@ -19,7 +19,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main', helpers: { same: (a, b)
 app.use(express.static('public'))
 
 // Route
-app.use(Router)
+// app.use(Router)
 
 // Listen
 app.listen(PORT, () => console.log(`The server is running on localhost:${PORT}`))
