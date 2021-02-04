@@ -1,0 +1,3 @@
+root
+Sf0x3r7dBsqMLLZM
+mongodb+srv://root:Sf0x3r7dBsqMLLZM@expense-tracker.sxv90.mongodb.net/expense-tracker?retryWrites=true&w=majority
