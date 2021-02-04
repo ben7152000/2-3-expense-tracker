@@ -6,7 +6,7 @@ const recordSchema = new Schema({
   date: { type: String, required: true },
   category: { type: String, required: true },
   categoryIcon: { type: String, required: true },
-  amount: { type: Number, required: true }
+  amount: { type: String, required: true }
 })
 
 const Record = mongoose.model('Record', recordSchema)
