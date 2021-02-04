@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // Express-Handlebars
 app.set('view engine', 'handlebars')
 app.engine('handlebars', exphbs({ defaultLayout: 'main', helpers: { same: (a, b) => a === b } }))
-// app.use(express.static('public'))
+app.use(express.static('public'))
 
 // Route
 app.use(Router)
