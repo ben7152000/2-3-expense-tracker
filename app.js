@@ -5,7 +5,7 @@ const Router = require('./routes/index')
 
 // Normal Setting
 const app = express()
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 // Mongoose
 require('./config/mongoose')
