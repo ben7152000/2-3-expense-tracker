@@ -8,14 +8,6 @@ const p = new Promise((resolve, reject) => {
     resolve()
   })
 })
-p.then(() => {
-  const record = []
-  for (let i = 0; i < records.length; i++) {
-    const newRecord = new Record(records[i])
-    record.push(newRecord)
-  }
-  console.log('record is done')
-  return record
-})
-  .then(() => db.close())
+p.then(() => Record.create(records))
+  .then(() => console.log('record is done'))
   .catch(err => console.log(err))

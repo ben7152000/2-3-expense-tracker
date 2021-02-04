@@ -10,7 +10,7 @@ const p = new Promise((resolve, reject) => {
 })
 p.then(() => {
   categories.forEach(category => new Category(category))
-  console.log('category is done')
 })
+  .then(() => console.log('category is done'))
   .then(() => db.close())
   .catch(err => console.log(err))
