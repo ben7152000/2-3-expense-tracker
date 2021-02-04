@@ -1,22 +1,16 @@
 const db = require('../../config/mongoose')
-// const Record = require('../record')
-// const records = require('../record.json').results
+const Record = require('../record')
+const records = require('../record.json').results
 
-db.once('open', () => {
-  console.log('mongodb connected !!')
+const p = new Promise((resolve, reject) => {
+  db.once('open', () => {
+    console.log('mongodb connected !!')
+    resolve()
+  })
 })
-
-// db.once('open', () => {
-//   const records = []
-//   recordList.results.forEach(record => {
-//     const icon = categoryList.results.find(
-//       category => category.name === record.category
-//     ).icon
-//     record.categoryIcon = icon
-//     records.push(record)
-//   })
-//   Record.create(records)
-//     .then(() => {
-//       return db.close()
-//     })
-// })
+p.then(() => {
+  records.forEach(list => new Record(list))
+  console.log('record is done')
+})
+  .then(() => db.close())
+  .catch(err => console.log(err))

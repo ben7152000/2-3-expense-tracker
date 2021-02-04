@@ -2,17 +2,15 @@ const db = require('../../config/mongoose')
 const Category = require('../category')
 const categories = require('../category.json').results
 
-db.once('open', () => {
-  categories.forEach(category => Category.create(category))
+const p = new Promise((resolve, reject) => {
+  db.once('open', () => {
+    console.log('mongodb connected !!')
+    resolve()
+  })
 })
-
-// db.once('open', () => {
-//   const categories = []
-//   categoryList.results.forEach(category => {
-//     categories.push(category)
-//   })
-//   Category.create(categories)
-//     .then(() => {
-//       return db.close()
-//     })
-// })
+p.then(() => {
+  categories.forEach(category => new Category(category))
+  console.log('record is done')
+})
+  .then(() => db.close())
+  .catch(err => console.log(err))
