@@ -4,8 +4,9 @@
 1. Node.js : v14.15.4
 2. Express : v4.17.1
 3. Nodemon : v2.0.7
-4. Body-Parser : v1.19.0
-5. Mongoose : v5.11.14
+4. Eslint : v7.18.0
+5. Body-Parser : v1.19.0
+6. Mongoose : v5.11.14
 
 ## 安裝與執行步驟 (Installation and Execution)
 1. 將專案複製到本機 (兩種方法)
