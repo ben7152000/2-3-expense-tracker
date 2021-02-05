@@ -4,30 +4,35 @@
       "name": "早餐",
       "date": "2021-01-01",
       "category": "food",
+      "categoryIcon": "fas fa-utensils",
       "amount": 120
     },
     {
       "name": "房租",
       "date": "2021-01-01",
       "category": "home",
+      "categoryIcon": "fas fa-home",
       "amount": 1200
     },
     {
       "name": "搭捷運",
       "date": "2021-01-01",
       "category": "traffic",
+      "categoryIcon": "fas fa-shuttle-beam",
       "amount": 120
     },
     {
       "name": "唱歌",
       "date": "2021-01-03",
       "category": "entertainment",
+      "categoryIcon": "fas fa-grin-beam",
       "amount": 540
     },
     {
       "name": "買原子筆",
       "date": "2021-01-13",
       "category": "other",
+      "categoryIcon": "fas fa-pen",
       "amount": 60
     }
   ]
