@@ -1,6 +1,6 @@
 const db = require('../../config/mongoose')
 const Category = require('../category')
-const categories = require('../category.json').results
+const categories = require('./category.json').results
 
 db.once('open', () => {
   console.log('mongodb connected !!')

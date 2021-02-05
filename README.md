@@ -18,6 +18,10 @@
 > 打開終端機輸入
 `npm install`
 
+3. 建立種子檔案
+> 打開終端機輸入
+`npm run seed`
+
 3. 執行專案
 > 打開終端機輸入 
 `npm run dev`
