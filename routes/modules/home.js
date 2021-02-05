@@ -1,12 +1,11 @@
-const Record = require('../../models/record')
+
 const express = require('express')
 const router = express.Router()
+const Record = require('../../models/record')
 
 // home
 router.get('/', (req, res) => {
-  const records = new Record()
-  records
-    .find()
+  Record.find()
     .lean()
     .then(record => {
       let totalAmount = 0
