@@ -1,7 +1,7 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
-const routers = require('./routes')
+const routes = require('./routes')
 
 // Mongoose
 require('./config/mongoose')
@@ -19,7 +19,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // Route
-app.use(routers)
+app.use(routes)
 
 // Listen
 app.listen(PORT, console.log(`The server is running on localhost:${PORT}`))
