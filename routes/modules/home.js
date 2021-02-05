@@ -4,8 +4,8 @@ const router = express.Router()
 
 // home
 router.get('/', (req, res) => {
-  if (Record === null) return res.render('index')
-  Record
+  const records = new Record()
+  records
     .find()
     .lean()
     .then(record => {
