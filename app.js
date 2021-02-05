@@ -3,20 +3,20 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const Router = require('./routes/index')
 
-// Normal Setting
-const app = express()
-const PORT = process.env.PORT || 3000
-
 // Mongoose
 require('./config/mongoose')
 
-// Body-Parser
-app.use(bodyParser.urlencoded({ extended: true }))
+// Normal Setting
+const app = express()
+const PORT = process.env.PORT || 3000
 
 // Express-Handlebars
 app.set('view engine', 'handlebars')
 app.engine('handlebars', exphbs({ defaultLayout: 'main', helpers: { same: (a, b) => a === b } }))
 app.use(express.static('public'))
+
+// Body-Parser
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // Route
 app.use(Router)
