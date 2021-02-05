@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
+
 const Record = require('../../models/record')
+
+const categoryIcon = require('../../models/seeds/categories.json').results
 
 // home
 router.get('/', (req, res) => {
@@ -11,7 +14,7 @@ router.get('/', (req, res) => {
       record.forEach(list => {
         totalAmount += list.amount
       })
-      res.render('index', { totalAmount, record })
+      res.render('index', { totalAmount, record, categoryIcon })
     })
     .catch(error => console.error(error))
 })
