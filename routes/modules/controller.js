@@ -1,12 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../../models/record')
+const Category = require('../../models/category')
 
 // New
 router.get('/new', (req, res) => res.render('new'))
 
 router.post('/new', (req, res) => {
-  const { Name, Date, Category, Amount } = req.body
+  const { Name, Date, Amount } = req.body
   const [category, categoryIcon] = Category.split('/')
   Record.create({
     name: Name,
@@ -57,7 +58,9 @@ router.post('/:id/delete', (req, res) => {
 // filter
 router.get('/filter', (req, res) => {
   const filter = req.query.filter
-  if (filter === 'all') res.redirect('/')
+  if (filter === 'all') {
+    return res.redirect('/')
+  }
   Record.find({ category: filter })
     .lean()
     .then(record => {
