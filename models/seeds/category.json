@@ -1,24 +1,24 @@
 {
   "results": [
     {
-      "name": "food",
-      "icon": "fas fa-utensils"
+      "category": "food",
+      "categoryIcon": "fas fa-utensils"
     },
     {
-      "name": "home",
-      "icon": "fas fa-home"
+      "category": "home",
+      "categoryIcon": "fas fa-home"
     },
     {
-      "name": "traffic",
-      "icon": "fas fa-shuttle-van"
+      "category": "traffic",
+      "categoryIcon": "fas fa-shuttle-van"
     },
     {
-      "name": "entertainment",
-      "icon": "fas fa-grin-beam"
+      "category": "entertainment",
+      "categoryIcon": "fas fa-grin-beam"
     },
     {
-      "name": "other",
-      "icon": "fas fa-pen"
+      "category": "other",
+      "categoryIcon": "fas fa-pen"
     }
   ]
 }

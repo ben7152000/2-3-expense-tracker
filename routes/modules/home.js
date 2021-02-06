@@ -7,11 +7,15 @@ router.get('/', (req, res) => {
   Record.find()
     .lean()
     .then(record => {
+      const newRecord = []
       let totalAmount = 0
       record.forEach(list => {
-        totalAmount += list.amount
+        if (list.name !== undefined) {
+          newRecord.push(list)
+          totalAmount += list.amount
+        }
       })
-      res.render('index', { totalAmount, record })
+      res.render('index', { totalAmount, record: newRecord })
     })
     .catch(error => console.error(error))
 })
