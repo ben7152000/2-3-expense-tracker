@@ -58,29 +58,32 @@ router.post('/:id/delete', (req, res) => {
 
 // filter
 router.get('/filter', async (req, res) => {
-  const filter = req.query.filter
-  const categories = await Category.find().lean()
-  let totalAmount = 0
-  if (filter === 'all') {
-    return res.redirect('/')
-  }
-  await Record.find({ category: filter })
-    .lean()
-    .then(records => {
-      const category = [...categories]
-      const record = [...records]
-      const recordItem = [...record]
-      for (const item of recordItem) {
-        totalAmount += item.amount
-        for (const icon of category) {
-          if (icon.name === item.category) {
-            item.categoryIcon = icon.icon
+  try {
+    const filter = req.query.filter
+    const categories = await Category.find().lean()
+    let totalAmount = 0
+    if (filter === 'all') {
+      return res.redirect('/')
+    }
+    await Record.find({ category: filter })
+      .lean()
+      .then(records => {
+        const category = [...categories]
+        const record = [...records]
+        const recordItem = [...record]
+        for (const item of recordItem) {
+          totalAmount += item.amount
+          for (const icon of category) {
+            if (icon.name === item.category) {
+              item.categoryIcon = icon.icon
+            }
           }
         }
-      }
-      res.render('index', { totalAmount, record, filter })
-    })
-    .catch(error => console.log(error))
+        res.render('index', { totalAmount, record, filter })
+      })
+  } catch (e) {
+    console.log(e)
+  }
 })
 
 module.exports = router
