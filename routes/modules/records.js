@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+
+const Category = require('../../models/category')
 const Record = require('../../models/record')
 
 // New
@@ -55,23 +57,28 @@ router.post('/:id/delete', (req, res) => {
 })
 
 // filter
-router.get('/filter', (req, res) => {
+router.get('/filter', async (req, res) => {
   const filter = req.query.filter
+  const categories = await Category.find().lean()
+  let totalAmount = 0
   if (filter === 'all') {
     return res.redirect('/')
   }
-  Record.find({ category: filter })
+  await Record.find({ category: filter })
     .lean()
-    .then(record => {
-      const newRecord = []
-      let totalAmount = 0
-      record.forEach(list => {
-        if (list.name !== undefined) {
-          newRecord.push(list)
-          totalAmount += list.amount
+    .then(records => {
+      const category = [...categories]
+      const record = [...records]
+      const recordItem = [...record]
+      for (const item of recordItem) {
+        totalAmount += item.amount
+        for (const icon of category) {
+          if (icon.name === item.category) {
+            item.categoryIcon = icon.icon
+          }
         }
-      })
-      res.render('index', { totalAmount, record: newRecord, filter })
+      }
+      res.render('index', { totalAmount, record, filter })
     })
     .catch(error => console.log(error))
 })
