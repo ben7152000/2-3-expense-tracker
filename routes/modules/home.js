@@ -1,23 +1,30 @@
 const express = require('express')
 const router = express.Router()
+
+const Category = require('../../models/category')
 const Record = require('../../models/record')
 
 // home
-router.get('/', (req, res) => {
-  Record.find()
+router.get('/', async (req, res) => {
+  const categories = await Category.find().lean()
+  let totalAmount = 0
+  await Record
+    .find()
     .lean()
-    .then(record => {
-      const newRecord = []
-      let totalAmount = 0
-      record.forEach(list => {
-        if (list.name !== undefined) {
-          newRecord.push(list)
-          totalAmount += list.amount
+    .then(records => {
+      const category = [...categories]
+      const record = [...records]
+      const recordItem = [...record]
+      for (const item of recordItem) {
+        totalAmount += item.amount
+        for (const icon of category) {
+          if (icon.name === item.category) {
+            item.categoryIcon = icon.icon
+          }
         }
-      })
-      res.render('index', { totalAmount, record: newRecord })
+      }
+      res.render('index', { totalAmount, record })
     })
-    .catch(error => console.error(error))
 })
 
 module.exports = router
