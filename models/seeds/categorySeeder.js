@@ -1,10 +1,10 @@
 const db = require('../../config/mongoose')
-const Record = require('../record')
-const categories = require('./category.json').results
+const Category = require('../category')
+const category = require('./category.json').results
 
 db.once('open', () => {
   console.log('mongodb connected !!')
-  Record.create(categories)
+  Category.create(category)
     .then(() => db.close())
   console.log('category is done')
 })
