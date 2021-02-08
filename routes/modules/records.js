@@ -67,13 +67,10 @@ router.get('/filter', async (req, res) => {
     }
     await Record.find({ category: filter })
       .lean()
-      .then(records => {
-        const category = [...categories]
-        const record = [...records]
-        const recordItem = [...record]
-        for (const item of recordItem) {
+      .then(record => {
+        for (const item of record) {
           totalAmount += item.amount
-          for (const icon of category) {
+          for (const icon of categories) {
             if (icon.name === item.category) {
               item.categoryIcon = icon.icon
             }
