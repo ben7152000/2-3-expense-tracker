@@ -60,13 +60,14 @@ router.post('/:id/delete', (req, res) => {
 router.get('/filter', async (req, res) => {
   try {
     const filter = req.query.filter
-    const categories = await Category.find().lean()
+    const categories = await Category.find().lean().exec()
     let totalAmount = 0
     if (filter === 'all') {
       return res.redirect('/')
     }
     await Record.find({ category: filter })
       .lean()
+      .exec()
       .then(record => {
         for (const item of record) {
           totalAmount += item.amount
